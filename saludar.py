@@ -24,7 +24,7 @@ def saludar(nombre=None, idioma="es"):
     """Genera un saludo aleatorio en el idioma pedido."""
     if idioma not in SALUDOS:
         raise ValueError("Idioma no soportado")
-    saludo = random.secrets(SALUDOS[idioma])
+    saludo = secrets.choice(SALUDOS[idioma])
     if nombre is None:
         return saludo
     return f"{saludo}, {validar_nombre(nombre)}"
