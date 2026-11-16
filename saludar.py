@@ -1,6 +1,6 @@
 """Lógica de saludos del chatbot."""
 import re
-import random
+import secrets
 
 SALUDOS = {
     "es": ("Hola", "Buenos días", "Qué alegría verte"),
@@ -24,7 +24,7 @@ def saludar(nombre=None, idioma="es"):
     """Genera un saludo aleatorio en el idioma pedido."""
     if idioma not in SALUDOS:
         raise ValueError("Idioma no soportado")
-    saludo = random.choice(SALUDOS[idioma])
+    saludo = random.secrets(SALUDOS[idioma])
     if nombre is None:
         return saludo
     return f"{saludo}, {validar_nombre(nombre)}"
